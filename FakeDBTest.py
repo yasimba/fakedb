@@ -20,7 +20,7 @@ class FileUtilsTest(unittest.TestCase):
         db = FakeDB()
         db.create("name","Test")
         id = db.commit('test.json')
-        db.delete(id)
+        db.clear(id)
         self.assertEqual(1,len(db.get_object_by_id(id)))
         os.remove('test.json')
 
