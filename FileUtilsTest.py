@@ -2,7 +2,7 @@ import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 import unittest
-from fakedb.utils import FileUtils as futils
+from utils import FileUtils as futils
 import filecmp
 
 
