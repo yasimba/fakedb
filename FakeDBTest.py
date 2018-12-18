@@ -21,7 +21,7 @@ class FileUtilsTest(unittest.TestCase):
         db.create("name","Test")
         id = db.commit('test.json')
         db.clear(id)
-        self.assertEqual(1,len(db.get_object_by_id(id)))
+        self.assertEqual(0,len(db.get_object_by_id(id)))
         os.remove('test.json')
 
 
