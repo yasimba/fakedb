@@ -17,7 +17,7 @@ Usage:
 >>> print(myDB.update('9ac16b9b',{'time':'never'}))
 None
 >>> print(myDB.get_objects())
-{'9ac16b9b': {'name': 'David', 'age': '21', 'places': ['watoto', 'weight of glory', 'winners'], 'artist': 'Leonardo DaVinci', 'time': 'never'}}
+{'9ac16b9b': {'name': 'David', 'age': '200', 'places': ['watoto', 'weight of glory', 'winners'], 'artist': 'Leonardo DaVinci', 'time': 'never'}}
 >>> print(myDB.clear('9ac16b9b'))
 None
 >>> print(myDB.get_objects())
