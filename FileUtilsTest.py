@@ -2,7 +2,7 @@ import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 import unittest
-from fakedb.utils import FileUtils as futils
+from utils import FileUtils as futils
 import filecmp
 
 
@@ -14,8 +14,8 @@ class FileUtilsTest(unittest.TestCase):
         data = "ABCDEFG"
         file1 = "file.json"
         file2 = "f.json"
-        futils.write_to_file(self,"tests/"+file1,data)
-        futils.write_to_file(self,"tests/"+file2,data)
+        futils.write_to_file(self,file1,data)
+        futils.write_to_file(self,file2,data)
         dir = os.path.dirname(os.path.abspath(__file__))
         self.assertTrue(filecmp.cmp(os.path.join(dir,file2), os.path.join(dir,file1)))
         os.remove(file2)

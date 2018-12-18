@@ -1,16 +1,13 @@
-import os
-import sys
 import uuid
-sys.path.append(os.path.join(os.path.dirname(__file__), ".", ".."))
-from fakedb.utils import FileUtils as utils
+from utils import FileUtils as utils
 import json
 
 class FakeDB(object):
     """Interface for creating and managing new objects"""
 
     def __init__(self):
-        self.objects = {}
-        self.obj = {}
+        self.objects = dict()
+        self.obj = dict()
 
     def create(self,k,v):
         """Creates a new object
@@ -31,8 +28,8 @@ class FakeDB(object):
         """
         self.objects[id].update(data)
 
-    def delete(self,id):
-        """Delete an object
+    def clear(self,id):
+        """Clear the contents of an object
         :type id: str
         param id: id of dictionary to delete
         return: void
@@ -46,7 +43,7 @@ class FakeDB(object):
         return: id of commited object
         """
         #prevent duplicate entries, clear list and start afresh
-        self.objects = {}
+        self.objects = dict()
         #generate 4-character id
         id = str(uuid.uuid4())[:8]
         self.objects[id] = self.obj
