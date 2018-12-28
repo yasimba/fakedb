@@ -14,12 +14,10 @@ Usage:
 >>> myDB.commit('david.json')
 >>> print(myDB.get_objects())
 {'9ac16b9b': {'name': 'David', 'age': '200', 'places': ['watoto', 'weight of glory', 'winners'], 'artist': 'Leonardo DaVinci'}}
->>> print(myDB.update('9ac16b9b',{'time':'never'}))
-None
+>>> myDB.update('9ac16b9b',{'time':'never'})
 >>> print(myDB.get_objects())
 {'9ac16b9b': {'name': 'David', 'age': '200', 'places': ['watoto', 'weight of glory', 'winners'], 'artist': 'Leonardo DaVinci', 'time': 'never'}}
->>> print(myDB.clear('9ac16b9b'))
-None
+>>> myDB.clear('9ac16b9b')
 >>> print(myDB.get_objects())
 {'9ac16b9b': {}}
 ```
