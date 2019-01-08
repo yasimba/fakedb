@@ -19,6 +19,18 @@ class FakeDB(object):
         """
         self.obj[k] = v
 
+    def load_from(file_path):
+        """loads data from a defined file path
+        :type file_path: str
+        :param file_path: path from which to read data
+        :return list
+        """
+        return utils.read_from_file(file_path)
+
+    def remove(file_path):
+        utils.delete_file(file_path)
+
+
     def update(self,id,data):
         """Update an existing object
         :type id: str
@@ -47,7 +59,7 @@ class FakeDB(object):
         #generate 4-character id
         id = str(uuid.uuid4())[:8]
         self.objects[id] = self.obj
-        utils.write_to_file(self,f_name,json.dumps(self.objects))
+        utils.write_to_file(f_name,json.dumps(self.objects))
         return id
 
     def get_object(self):
